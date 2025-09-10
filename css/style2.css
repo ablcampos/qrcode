@@ -1,0 +1,197 @@
+h1, h2, h3, h4, h5, h6{ margin: 0;}
+
+p{ 
+    margin: 0;
+}
+
+
+body {
+    background-color: #f4f4f4;        
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;       
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fundo.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.3; /* ← Controle da transparência */
+    z-index: -1;
+}
+
+.container2 {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.top-image {
+    margin-top: 10px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.labels { margin: 20px 0;}
+
+.label {
+    display: inline-block;
+    background-color: #3498db;
+    color: white;
+    padding: 8px 16px;
+    margin: 5px;
+    border-radius: 20px;
+    font-size: 16px;
+}
+
+.description {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin: 20px 0;
+    max-width: 800px;
+}
+
+textarea{
+    /* max-width: 800px;  */
+    width: 100%;
+    height: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    resize: none;
+    height: 250px;
+}
+
+.bottom-image {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    margin-bottom: 10px;
+}
+
+.btn{
+    border-radius: 5px;
+    width: 130px;
+    height: 30px;
+    border: none; /*removendo a borda*/
+    font-size: 12px;
+    padding: 10 50;
+    cursor: pointer; /*altera o estilo do ponteiro do mouse no elemento*/    
+}
+
+
+/**************************************************************************************************************************************************/
+/* JANELA MODAL COM OS EDITS 
+/**************************************************************************************************************************************************/
+.foto-galeria {
+    width: 400px;
+    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
+
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.modalDialog {
+    position: fixed;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 99999;
+    opacity: 0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  }
+
+  .modalDialog:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .modalDialog > div {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    margin: 10% auto;
+    padding: 5px 20px 13px 20px;
+    border-radius: 10px;
+    background: #fff;
+    background: -moz-linear-gradient(#fff, #999);
+    background: -webkit-linear-gradient(#fff, #999);
+    background: -o-linear-gradient(#fff, #999);
+  }
+
+  .close {
+    background: #f34a45;
+    color: #FFFFFF;
+    line-height: 25px;
+    position: absolute;
+    right: -12px;
+    text-align: center;
+    top: -10px;
+    width: 24px;
+    text-decoration: none;
+    font-weight: bold;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    border-radius: 12px;
+    -moz-box-shadow: 1px 1px 3px #000;
+    -webkit-box-shadow: 1px 1px 3px #000;
+    box-shadow: 1px 1px 3px #000;
+  }
+
+  .close:hover {
+    background-color: #f50b03;
+    color: yellow;
+  }
+
+.contatos h2{
+    color:var(--brand-medium);
+    font-size: 22px;
+    margin-bottom: 10px;
+    font-family: "Playfair Display", serif;  
+}
+
+.btn-outline{
+    background-color: rgba(0, 89, 255, 0.966);
+    color: rgb(255, 255, 253);
+}
+
+.btn-outline:hover{
+    background-color: rgb(48, 67, 235);
+    color: rgb(252, 252, 250);
+}
+
+.btn-outline2{
+    background-color: rgba(8, 194, 201, 0.966);
+    color: rgb(255, 255, 253);
+}
+
+.btn-outline2:hover{
+    background-color: rgb(6, 176, 182);
+    color: rgb(252, 252, 250);
+}
+/************************************************************************************************************************************************/
+/************************************************************************************************************************************************/
+/***********************************************************************************************************************************************/

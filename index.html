@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="descrition" content="Jardim das Acácias">
+    <title>Jardim das Acácias</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+<!--SLIDE DA PAGINA -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+    <script>
+          $(document).ready(function(){
+        $(".slider").bxSlider({                       
+            auto: true,            
+            speed : 2000,
+            pause: 4000
+        });
+      });      
+    </script>
+<!-- TERMINO DO SLIDE -->
+   
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body id="inicial">
+
+    <header class="header">
+        <div class="container">
+
+            <div class="logo">
+                <img src="img/logo.png" alt="logotipo">
+            </div>
+          
+            <nav class="menu">
+                <div class="text">
+                     <p id="pesquisa">Pesquisar</p>
+                </div>
+                
+                <form id="formulario">                    
+                    <input list="listaPessoas" id="pessoas" name="pessoas"
+                     onkeydown="abrirPagina(event)">
+                </form>
+                
+                <datalist id="listaPessoas">
+                  <!-- As opções serão preenchidas pelo JavaScript -->
+                </datalist>             
+
+                <button class="btn"  id="myButton">Pesquisar</button>                    
+    
+            </nav>
+
+        </div>
+    </header>
+
+
+    <div class="container">
+        <div class="slider" id="id-ini">
+        
+             <section class="hero-section bg-1">
+                 <div class="container2">
+                     <h1>Paz e Beleza em um só lugar !</h1>                
+                 </div>                
+             </section>
+ 
+             <section class="hero-section bg-2">
+                 <div class="container2">
+                     <h1>O meio ambiente é parte fundamental !</h1>                
+                 </div>
+             </section>
+ 
+             <section class="hero-section bg-3">
+                 <div class="container2">
+                     <h1>Nossa Sede com todo Conforto !</h1>                
+                 </div>
+             </section>
+ 
+             <section class="hero-section bg-4">
+                 <div class="container2">
+                     <h1>Amplo parque com toda segurança !</h1>                
+                 </div>
+             </section>
+             <section class="hero-section bg-5">
+                 <div class="container2">
+                     <h1>Cemitério parque Jardim das Acácias !</h1>                
+                 </div>
+             </section>
+         
+        </div>
+    </div> 
+  
+    
+    <footer class="footer">
+        <div class="container">
+
+            <div class="footer-text">
+                <span>Cemitério Parque Jardim das Acácias...</span>
+            </div>
+
+            <div class="social">
+                <a href="#"><img src="img/whatsapp.svg" alt=""></a>
+                <a href="#"><img src="img/instagram.svg" alt=""></a>
+                <a href="#"><img src="img/twitter.svg" alt=""></a>
+            </div>
+
+        </div>
+    </footer>
+  
+      
+    <script src="js/script.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+       var swiper = new Swiper(".mySwiper", {
+           loop:true,
+           autoplay: {
+                 delay: 2500,
+                 
+                 disableOnInteraction: false,
+                 pauseOnMouseEnter:true
+                 
+            },
+           navigation: {
+               nextEl: ".swiper-button-next",
+               prevEl: ".swiper-button-prev",
+        },
+       
+    });
+
+
+    </script>
+</body>
+</html>
