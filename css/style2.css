@@ -3,7 +3,57 @@ h1, h2, h3, h4, h5, h6{ margin: 0;}
 p{ 
     margin: 0;
 }
+.video-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+}
 
+.video-wrapper {
+    position: relative;
+    width: 400px;
+}
+
+video {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+}
+
+.play-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: white;
+    text-shadow: 0 0 10px rgba(0,0,0,0.7);
+    pointer-events: none;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.controls button {
+    background: #444;
+    color: white;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+.controls button:hover {
+    background: #666;
+}
 
 body {
     background-color: #f4f4f4;        
@@ -20,10 +70,13 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('../img/fundo.avif');
+    background-image: url('../img/fund.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+
+    /* background-image: url('../img/fundo.avif'); */
+    background-color: #524f4f;
     opacity: 0.3; /* ← Controle da transparência */
     z-index: -1;
 }
@@ -32,6 +85,11 @@ body::before {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+}
+
+.container2 p{
+    font-size: 14;
+    font-weight: bold;
 }
 
 .top-image {
@@ -73,6 +131,8 @@ textarea{
     box-sizing: border-box;
     resize: none;
     height: 250px;
+    font-size: 14px;
+    font-weight: bold;
 }
 
 .bottom-image {
@@ -97,13 +157,13 @@ textarea{
 /**************************************************************************************************************************************************/
 /* JANELA MODAL COM OS EDITS 
 /**************************************************************************************************************************************************/
-.foto-galeria {
-    width: 400px;
-    height: 400px;
-    max-width: 400px;
-    max-height: 400px;
-
-    margin: 10px;
+.foto-galeria {   
+    max-width: 800px;
+    max-height: 800px;     
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 10px; 
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
@@ -130,11 +190,10 @@ textarea{
   }
 
   .modalDialog > div {
-    width: 400px;
+    width: 300px;
     height: 400px;
     position: relative;
-    margin: 10% auto;
-    padding: 5px 20px 13px 20px;
+    margin: 10% auto; 
     border-radius: 10px;
     background: #fff;
     background: -moz-linear-gradient(#fff, #999);
@@ -173,6 +232,12 @@ textarea{
     font-family: "Playfair Display", serif;  
 }
 
+.contatos p{
+    color:var(--brand-medium);
+    font-size: 14px;
+    /* margin-bottom: 10px; */
+    font-family: "Playfair Display", serif;  
+}
 .btn-outline{
     background-color: rgba(0, 89, 255, 0.966);
     color: rgb(255, 255, 253);

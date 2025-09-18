@@ -1,7 +1,8 @@
 
 // const url = 'http://213.218.234.164:9000/';
-//const url = 'https://api.procampos.com.br/';
-const url = 'http://localhost:9000/';
+const url = 'https://api.procampos.com.br/';
+//const url = 'http://142.4.193.48:9000/';
+// const url = 'https://api.jarb.com.br/';
 const username = '12345';
 const password = '12345';
 const headers = new Headers();// Montar cabeçalho de autenticação
@@ -137,10 +138,17 @@ function baixaJsonInumado(vlCodigo){
            dataNasc = data2.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
            data2    = new Date(data.fales);
            dataFale = data2.toLocaleDateString('pt-BR', {timeZone: 'UTC'});
+           data.obs = 'A era digital é um período de grande transformação e inovação, trazendo consigo uma série de oportunidades e desafios. Uma das principais importâncias da era digital é a capacidade de conectar pessoas e comunidades em todo o mundo, permitindo a troca de informações e ideias de forma rápida e eficiente.'+
+           'A inteligência artificial (IA) é uma das principais tecnologias da era digital, permitindo que máquinas e sistemas aprendam e se adaptem às necessidades dos usuários. A IA tem aplicações em diversas áreas, desde a assistência virtual até a análise de dados complexos, melhorando a eficiência e a precisão em muitos setores.'+
+           'No entanto, a era digital também traz desafios, como o cyberbullying. O cyberbullying é uma forma de assédio e intimidação que ocorre online, podendo ter consequências graves para a saúde mental e emocional das vítimas. É fundamental que sejam implementadas medidas para prevenir e combater o cyberbullying, protegendo os usuários e promovendo um ambiente online seguro.'+
+           'Outro desafio importante da era digital é a disseminação de fake news. As notícias falsas podem ter consequências graves, desde a manipulação de opiniões públicas até a propagação de informações erradas. É essencial que os usuários sejam críticos e verificadores das informações que consomem online, e que as fontes de notícias sejam transparentes e confiáveis.'+
+           'A segurança e o controle também são fundamentais na era digital. Com a crescente dependência da tecnologia, é importante proteger os dados pessoais e garantir a segurança online. Isso inclui a implementação de medidas de segurança robustas, como a autenticação de dois fatores e a criptografia de dados.'+
+           'Em resumo, a era digital é um período de grande oportunidade e desafio. Com a inteligência artificial, a conexão global e a troca de informações, é possível criar um futuro mais eficiente e conectado. No entanto, é fundamental abordar os desafios do cyberbullying, das fake news e da segurança online para garantir que a era digital seja um período de progresso e inovação para todos.';
+
            document.getElementById('breveHistoria').innerText = data.texto;
            document.getElementById('nomeFales').innerText = data.nome;
            document.getElementById('nasci').innerText = '✨ ' +  dataNasc;
-           document.getElementById('fales').innerText = '✝️ ' + dataFale;
+        //    document.getElementById('fales').innerText = '✝️ ' + dataFale;
            document.getElementById('historia').innerText = data.obs;
 
 

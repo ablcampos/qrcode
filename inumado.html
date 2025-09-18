@@ -18,8 +18,7 @@
         const params = new URLSearchParams(window.location.search);
         const tipo_codigo = params.get("codigo");      
         // Monta o caminho da música dinamicamente
-     //  document.getElementById("musica").src = "https://api.procampos.com.br/SONGS/song" + tipo_codigo + ".mp3";
-         document.getElementById("musica").src = "SONGS/song" + tipo_codigo + ".mp3";
+        document.getElementById("musica").src = "https://api.procampos.com.br/SONGS/song" + tipo_codigo + ".mp3";
       </script>       
        
     <div id="openModal" class="modalDialog">
@@ -27,12 +26,12 @@
               <a href="#close" title="Close" class="close">X</a>
               <h2>Atenção</h2>
               <p>As configurações do seu navegador não permitem a <br><br>
-                execução de SOM ambiente esta opção vem<br><br>
-                DESABILITADA, se desejar que uma música fique<br><br>
-                tocando no fundo, clique no botão PERMITIR,<br><br>
-                caso contrário clique no botão SAIR.<br><br>
-                A qualquer momento você pode INICIAR ou PARAR<br><br>
-                o som ambiente....
+                execução de SOM ambiente, esta opção vem<br><br>
+                DESABILITADA, se desejar que uma música<br><br>
+                fique tocando ao fundo, clique no botão<br><br>
+                PERMITIR caso contrário clique em SAIR.<br><br>
+                A qualquer momento você pode<br><br>
+                INICIAR ou PARAR o som ambiente....
               </p>
               <br><br>
               <br><br>      
@@ -43,16 +42,16 @@
     
     <div class="container2">
         <!-- Foto no topo -->
-        <p id="breveHistoria"></p> 
-       
+        <p id="nomeFales"></p> 
+               
         <img id="foto" alt="Foto Topo" class="top-image">
        
-        <p id="nomeFales"></p> 
+        <p id="breveHistoria"></p> 
         
         <!-- Labels -->
         <div class="labels">
             <div id="nasci" class="label"></div>
-            <div id="fales" class="label"></div>
+            <!-- <div id="fales" class="label"></div> -->
         </div>
 
         <!-- Texto -->
@@ -60,13 +59,93 @@
             <textarea id="historia" disabled></textarea>
         </div>
 
-        <div class="container2" id="galeria">
+        <!-- <div class="container2" id="galeria"> -->
+        <div id="galeria"></div>
             <!-- As imagens serão inseridas aqui -->
-        </div>     
+              <!-- Container para os vídeos -->
+              <div class="video-container">
+
+                <!-- VIDEO 1 -->
+                <div class="video-wrapper">
+                    <video id="video1" src="https://api.procampos.com.br/SONGS/video1.mp4" poster="https://via.placeholder.com/300x200?text=Video+1"></video>
+                    <div class="play-overlay" id="overlay1">▶</div>
+                    <div class="controls">
+                        <button class="play-btn" data-video="video1">▶ Play</button>
+                        <button class="pause-btn" data-video="video1">⏸ Pause</button>
+                        <button class="stop-btn" data-video="video1">⏹ Stop</button>
+                    </div>
+                </div>
+            
+                <!-- VIDEO 2 -->
+                <div class="video-wrapper">
+                    <video id="video2" src="https://api.procampos.com.br/SONGS/video2.mp4" poster="https://via.placeholder.com/300x200?text=Video+2"></video>
+                    <div class="play-overlay" id="overlay2">▶</div>
+                    <div class="controls">
+                        <button class="play-btn" data-video="video2">▶ Play</button>
+                        <button class="pause-btn" data-video="video2">⏸ Pause</button>
+                        <button class="stop-btn" data-video="video2">⏹ Stop</button>
+                    </div>
+                </div>
+            
+            </div>          
         
     </div>
+
     <script src="js/script.js"></script>
 
+    <script>
+        const musica = document.getElementById('musica');
+        
+        function playVideo(videoId) {
+            const video = document.getElementById(videoId);
+            const overlay = document.querySelector(`#${videoId}`).parentElement.querySelector('.play-overlay');
+        
+            // Para a música quando qualquer vídeo começar
+            if (!musica.paused) musica.pause();
+        
+            // Pausa outros vídeos
+            document.querySelectorAll('video').forEach(v => {
+                if (v.id !== videoId) v.pause();
+            });
+        
+            overlay.style.display = "none";
+            video.play();
+        }
+        
+        function pauseVideo(videoId) {
+            const video = document.getElementById(videoId);
+            video.pause();
+        }
+        
+        function stopVideo(videoId) {
+            const video = document.getElementById(videoId);
+            video.pause();
+            video.currentTime = 0;
+            const overlay = document.querySelector(`#${videoId}`).parentElement.querySelector('.play-overlay');
+            overlay.style.display = "block";
+        }
+        
+        // Eventos dos botões
+        document.querySelectorAll('.play-btn').forEach(btn => {
+            btn.addEventListener('click', () => playVideo(btn.dataset.video));
+        });
+        
+        document.querySelectorAll('.pause-btn').forEach(btn => {
+            btn.addEventListener('click', () => pauseVideo(btn.dataset.video));
+        });
+        
+        document.querySelectorAll('.stop-btn').forEach(btn => {
+            btn.addEventListener('click', () => stopVideo(btn.dataset.video));
+        });
+        
+        // Mostra overlay quando vídeo termina
+        document.querySelectorAll('video').forEach(video => {
+            video.addEventListener('ended', () => {
+                const overlay = video.parentElement.querySelector('.play-overlay');
+                overlay.style.display = "block";
+            });
+        });
+        </script>
     
 </body>
 </html>
